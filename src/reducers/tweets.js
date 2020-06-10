@@ -29,7 +29,7 @@ export default function tweets(state = {}, action) {
         replyingTo = {
           [tweet.replyingTo]: {
             ...state[tweet.replyingTo],
-            replies: state[tweet.replyTo].replies.contact([tweet.id]),
+            replies: state[tweet.replyingTo].replies.concat([tweet.id]),
           },
         };
       }
